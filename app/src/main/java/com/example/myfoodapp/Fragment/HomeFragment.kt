@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
-import com.example.myfoodapp.AllFoodAdapter
+import com.example.myfoodapp.Adapter.AllFoodAdapter
+import com.example.myfoodapp.MenuBottomSheetFragment
 import com.example.myfoodapp.R
 import com.example.myfoodapp.databinding.FragmentHomeBinding
 
@@ -31,7 +32,7 @@ class HomeFragment : Fragment() {
 
         binding.btnViewmenu.setOnClickListener {
             val bottomSheetDialog = MenuBottomSheetFragment()
-            bottomSheetDialog.show(parentFragmentManager,"BottomSheet")
+            bottomSheetDialog.show(parentFragmentManager, "BottomSheet")
         }
         return binding.root
 
@@ -66,7 +67,7 @@ class HomeFragment : Fragment() {
         val price = listOf("100$", "100k", "1 củ", "50 cành")
         val popularfoodimage =
             listOf(R.drawable.menu1, R.drawable.menu2, R.drawable.menu3, R.drawable.menu4)
-        val adapter = AllFoodAdapter(foodname,price,popularfoodimage)
+        val adapter = AllFoodAdapter(foodname, price, popularfoodimage, requireContext())
         binding.rycvHomefrag.layoutManager = LinearLayoutManager(requireContext())
         binding.rycvHomefrag.adapter = adapter
     }

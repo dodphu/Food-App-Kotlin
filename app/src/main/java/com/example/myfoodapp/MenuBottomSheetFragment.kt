@@ -1,12 +1,11 @@
-package com.example.myfoodapp.Fragment
+package com.example.myfoodapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myfoodapp.CartAdapter
+import com.example.myfoodapp.Adapter.CartAdapter
 import com.example.myfoodapp.R
 import com.example.myfoodapp.databinding.FragmentMenuBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment

@@ -5,16 +5,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
-import com.example.myfoodapp.databinding.ActivityMainBinding
+import com.example.myfoodapp.databinding.ActivityPayFoodBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class PayFoodActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPayFoodBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityPayFoodBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -22,13 +20,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val myNavController = findNavController(R.id.fragmentContainerView)
-        val bottom_nav = binding.navBottom
-        bottom_nav.setupWithNavController(myNavController)
-
-        binding.btnNotifiMain.setOnClickListener {
-            val bottomSheetDialog = NotificationBottomFragment()
-            bottomSheetDialog.show(supportFragmentManager,"NotifiBottom")
+        binding.btnDathangngayPayfood.setOnClickListener {
+            val bottomDialogSheet = BuyFoodBottomSheetFragment()
+            bottomDialogSheet.show(supportFragmentManager, "buyfoodbottom")
         }
     }
 }

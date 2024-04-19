@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myfoodapp.CartAdapter
-import com.example.myfoodapp.MenuListAdapter
+import com.example.myfoodapp.Adapter.MenuListAdapter
 import com.example.myfoodapp.R
 import com.example.myfoodapp.databinding.FragmentSearchBinding
 
@@ -42,7 +41,7 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSearchBinding.inflate(layoutInflater, container, false)
-        adapter = MenuListAdapter(filterFoodName, filterFoodPrice, filterFoodImage)
+        adapter = MenuListAdapter(filterFoodName, filterFoodPrice, filterFoodImage, requireContext())
         binding.cycvSearch.layoutManager = LinearLayoutManager(requireContext())
         binding.cycvSearch.adapter = adapter
 

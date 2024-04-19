@@ -1,12 +1,14 @@
 package com.example.myfoodapp.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myfoodapp.CartAdapter
+import com.example.myfoodapp.Adapter.CartAdapter
+import com.example.myfoodapp.PayFoodActivity
 import com.example.myfoodapp.R
 import com.example.myfoodapp.databinding.FragmentCartBinding
 
@@ -39,6 +41,10 @@ class CartFragment : Fragment() {
         binding.rycvCartfrag.layoutManager = LinearLayoutManager(requireContext())
         binding.rycvCartfrag.adapter = adapter
 
+        binding.btnMuahangCartFrag.setOnClickListener {
+            val intent = Intent(requireContext(),PayFoodActivity::class.java)
+            startActivity(intent)
+        }
         return binding.root
     }
 

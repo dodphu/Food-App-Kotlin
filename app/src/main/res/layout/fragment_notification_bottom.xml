@@ -4,21 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
-    tools:context=".MenuBottomSheetFragment">
+    android:padding="10dp"
+    tools:context=".NotificationBottomFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Menu"
         android:gravity="center"
-        android:textSize="24sp"
+        android:text="TRẠNG THÁI DƠN HÀNG"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rycv_menu_bottom_sheet"
+        android:id="@+id/rycv_notifi"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp"/>
-
+        tools:listitem="@layout/notification_item" />
 </LinearLayout>
