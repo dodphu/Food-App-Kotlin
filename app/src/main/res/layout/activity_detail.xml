@@ -39,6 +39,7 @@
         android:textSize="18sp" />
 
     <TextView
+        android:id="@+id/txt_mota_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="      Dĩa bánh xèo nóng hổi vừa được lấy ra từ bếp, phát ra hơi nóng hòa cùng mùi thơm của bánh mỳ và gia vị. Bánh xèo mảnh mai, mỏng như tờ giấy, màu vàng óng ánh với những lớp vỏ giòn giòn, giữa các lớp nhân phong phú. Bước chân qua, bạn nghe tiếng xèo xèo khi miếng bánh bẻ ra, phơi lớp nhân bên trong với sự kích thích của hương vị dầu mỡ thơm lừng.
@@ -53,6 +54,7 @@
 
 
     <TextView
+        android:id="@+id/txt_thanhphan_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

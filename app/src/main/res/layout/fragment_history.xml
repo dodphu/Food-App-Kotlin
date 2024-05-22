@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragment.HistoryFragment">
 
@@ -11,13 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Recent buy"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="20dp">
+
         <LinearLayout
+            android:id="@+id/recent_buy_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -35,8 +37,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/txt_name_fooditem_history"
@@ -45,6 +47,7 @@
                     android:layout_gravity="center"
                     android:text="Tên món ăn"
                     android:textSize="18sp" />
+
                 <TextView
                     android:id="@+id/txt_price_fooditem_history"
                     android:layout_width="wrap_content"
@@ -53,25 +56,41 @@
                     android:text="Giá" />
             </LinearLayout>
 
-            <Button
-                android:layout_gravity="center"
-                android:id="@+id/btn_remove_fooditem_history"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#139518"
-                android:text="Xóa khỏi lịch sử"
-                android:textSize="10sp" />
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/color_receive_history"
+                    android:layout_gravity="center"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:cardCornerRadius="100dp"
+                    android:backgroundTint="@color/black"/>
+
+                <Button
+                    android:id="@+id/btn_receive_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#139518"
+                    android:text="Received"
+                    android:textSize="10sp" />
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Recent buy"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rycv_historyfrag"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/history_buy_again_item"/>
+        tools:listitem="@layout/history_buy_again_item" />
 
 </LinearLayout>

@@ -2,20 +2,20 @@ package com.example.myfoodapp.Adapter
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.model.MenuItem
 import com.example.myfoodapp.DetailActivity
 import com.example.myfoodapp.databinding.MenuListItemBinding
 
 class MenuListAdapter(
-    private val menuItemsName: MutableList<String>,
-    private val menuItemPrice: MutableList<String>,
-    private val menuImage: MutableList<Int>,
-    private val requirecontext: Context,
-    private val itemClickListener: OnItemClickListener? = null
+    private val menuItems: List<MenuItem>,
+    private val requireContext: Context,
 ) : RecyclerView.Adapter<MenuListAdapter.MenuListViewHolder>() {
-
+    private val itemClickListener: OnItemClickListener? = null
     inner class MenuListViewHolder(private val binding: MenuListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -25,20 +25,30 @@ class MenuListAdapter(
                 if (position != RecyclerView.NO_POSITION) {
                     itemClickListener?.onItemClick(position)
                 }
-
-                val intent = Intent(requirecontext, DetailActivity::class.java)
-                intent.putExtra("MenuItemName", menuItemsName[position])
-                intent.putExtra("MenuItemImage", menuImage[position])
-
-                requirecontext.startActivity(intent)
+                openDetailActivity(position)
             }
         }
 
+        private fun openDetailActivity(position: Int) {
+            val menuItem = menuItems[position]
+            val intent = Intent(requireContext,DetailActivity::class.java).apply {
+                putExtra("MenuItemName", menuItem.foodName)
+                putExtra("MenuItemPrice", menuItem.foodPrice)
+                putExtra("MenuItemDescription", menuItem.foodDescription)
+                putExtra("MenuItemImage", menuItem.foodImage)
+                putExtra("MenuItemIngredients", menuItem.foodThanhPhan)
+            }
+            requireContext.startActivity(intent)
+        }
         fun bind(position: Int) {
+            val menuItem = menuItems[position]
             binding.apply {
-                txtNameFooditemMenu.text = menuItemsName[position]
-                txtPriceFooditemMenu.text = menuItemPrice[position]
-                imgvFooditemMenu.setImageResource(menuImage[position])
+                txtNameFooditemMenu.text = menuItem.foodName
+                txtPriceFooditemMenu.text = menuItem.foodPrice
+                val foodImageUrl = menuItem.foodImage ?: "default_image_url"
+
+                val uri = Uri.parse(foodImageUrl)
+                Glide.with(requireContext).load(uri).into(imgvFooditemMenu)
             }
         }
     }
@@ -49,7 +59,7 @@ class MenuListAdapter(
     }
 
     override fun getItemCount(): Int {
-        return menuItemsName.size
+        return menuItems.size
     }
 
     override fun onBindViewHolder(holder: MenuListViewHolder, position: Int) {

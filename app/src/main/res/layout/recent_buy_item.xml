@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="20dp"
-    android:layout_marginBottom="10dp">
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,10 +12,11 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imgv_cartitem"
+            android:id="@+id/imgv_image_recent"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:padding="5dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
             android:src="@drawable/menu1" />
 
         <LinearLayout
@@ -27,19 +28,35 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/txt_cart_item_name"
+                android:id="@+id/txt_name_recent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
+                android:padding="10dp"
                 android:text="Name food"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/txt_cart_item_price"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price food"
-                android:textSize="14sp" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Số lượng: "
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txt_soluong_recent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="10"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -49,41 +66,13 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/txt_giatien_recent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <ImageButton
-                    android:id="@+id/btn_giam_cart_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/baseline_horizontal_rule_24" />
-
-                <TextView
-                    android:id="@+id/txt_soluong_cart_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="1"
-                    android:textSize="16sp" />
-
-                <ImageButton
-                    android:id="@+id/btn_tang_cart_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/baseline_add_24" />
-
-            </LinearLayout>
-
-            <ImageButton
-                android:id="@+id/btn_remove_cart_item"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/baseline_delete_forever_24"
-                android:padding="15dp" />
+                android:padding="10dp"
+                android:text="100.000đ"
+                android:textSize="20sp" />
 
         </LinearLayout>
     </LinearLayout>

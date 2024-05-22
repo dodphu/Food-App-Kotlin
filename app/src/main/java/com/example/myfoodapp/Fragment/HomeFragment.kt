@@ -1,23 +1,31 @@
 package com.example.myfoodapp.Fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.view.menu.MenuAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
-import com.example.myfoodapp.Adapter.AllFoodAdapter
+import com.example.model.MenuItem
+import com.example.myfoodapp.Adapter.MenuListAdapter
 import com.example.myfoodapp.MenuBottomSheetFragment
 import com.example.myfoodapp.R
 import com.example.myfoodapp.databinding.FragmentHomeBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class HomeFragment : Fragment() {
-
+    private lateinit var database: FirebaseDatabase
+    private lateinit var menuItem: MutableList<MenuItem>
     private lateinit var binding: FragmentHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +42,48 @@ class HomeFragment : Fragment() {
             val bottomSheetDialog = MenuBottomSheetFragment()
             bottomSheetDialog.show(parentFragmentManager, "BottomSheet")
         }
+        retriveAndDisplayFoodItem()
         return binding.root
 
+    }
+
+    private fun retriveAndDisplayFoodItem() {
+        database = FirebaseDatabase.getInstance()
+        val foodRef = database.reference.child("menu")
+        menuItem = mutableListOf()
+
+        foodRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (foodSnapshot in snapshot.children) {
+                    val itemmenu = foodSnapshot.getValue(MenuItem::class.java)
+                    Log.d("phuzzj", "onDataChange: $itemmenu")
+                    itemmenu?.let {
+                        menuItem.add(it)
+                    }
+                }
+                // Gọi hàm randomFoodItem() sau khi đã lấy được dữ liệu thành công
+                randomFoodItem()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Xử lý lỗi nếu có
+                Log.e("TAG", "Failed to retrieve data from Firebase", error.toException())
+            }
+        })
+    }
+
+
+    private fun randomFoodItem() {
+        val index = menuItem.indices.toList().shuffled()
+        val numItemshow = 6
+        val subsetMenuItem = index.take(numItemshow).map { menuItem[it] }
+        setItemAdapter(subsetMenuItem)
+    }
+
+    private fun setItemAdapter(subsetMenuItem: List<MenuItem>) {
+        val adapter = MenuListAdapter(subsetMenuItem, requireContext())
+        binding.rycvHomefrag.layoutManager = LinearLayoutManager(requireContext())
+        binding.rycvHomefrag.adapter = adapter
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -63,13 +111,6 @@ class HomeFragment : Fragment() {
             }
         })
 
-        val foodname = listOf("Burger", "Sandwich", "mòadnsdof", "falskjlsf")
-        val price = listOf("100$", "100k", "1 củ", "50 cành")
-        val popularfoodimage =
-            listOf(R.drawable.menu1, R.drawable.menu2, R.drawable.menu3, R.drawable.menu4)
-        val adapter = AllFoodAdapter(foodname, price, popularfoodimage, requireContext())
-        binding.rycvHomefrag.layoutManager = LinearLayoutManager(requireContext())
-        binding.rycvHomefrag.adapter = adapter
     }
 
     companion object {
