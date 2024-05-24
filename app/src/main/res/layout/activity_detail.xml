@@ -7,17 +7,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".DetailActivity">
+    tools:context=".activity.DetailActivity">
 
     <TextView
         android:id="@+id/txt_foodname_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:padding="10dp"
         android:text="Food Name"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#4CAF50"/>
+        android:textColor="#D60F00"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -34,29 +35,37 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:text="Mô tả"
-        android:textColor="#4CAF50"
-        android:textSize="18sp" />
+        android:textColor="#D60F00"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_mota_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:text="      Dĩa bánh xèo nóng hổi vừa được lấy ra từ bếp, phát ra hơi nóng hòa cùng mùi thơm của bánh mỳ và gia vị. Bánh xèo mảnh mai, mỏng như tờ giấy, màu vàng óng ánh với những lớp vỏ giòn giòn, giữa các lớp nhân phong phú. Bước chân qua, bạn nghe tiếng xèo xèo khi miếng bánh bẻ ra, phơi lớp nhân bên trong với sự kích thích của hương vị dầu mỡ thơm lừng.
         \n      Mùi thơm của hành lá, ngò rí và rau thơm hòa quyện với vị ngọt của thịt heo hoặc tôm và sự giòn tan của đậu xanh, tạo ra một hương vị đặc trưng và đầy đặn. Một lát bánh xèo được xếp trên đĩa, với một miếng rau sống tươi mát và một lát dưa leo giòn ngon bên cạnh. Khi chấm với nước mắm pha chua ngọt, một hương vị đậm đà và cân bằng hoàn hảo được tạo ra, làm cho bất kỳ ai thưởng thức món ăn này cảm thấy hài lòng và thỏa mãn." />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:text="Các thành phần chính "
-        android:textColor="#4CAF50"
-        android:textSize="18sp" />
+        android:textColor="#D60F00"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 
     <TextView
         android:id="@+id/txt_thanhphan_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_weight="1"
         android:text="1. Bột gạo: Bột gạo được ngâm nước và xay nhuyễn thành hỗn hợp để tạo thành vỏ bánh xèo.
 \n2. Nước cốt dừa: Nước cốt dừa thường được sử dụng để làm cho vỏ bánh xèo thêm mềm mại và thơm ngon.
@@ -72,6 +81,6 @@
         android:id="@+id/btn_addcart_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Thêm vào giỏ hàng"
-        android:backgroundTint="#4CAF50"/>
+        android:backgroundTint="#4CAF50"
+        android:text="Thêm vào giỏ hàng" />
 </LinearLayout>

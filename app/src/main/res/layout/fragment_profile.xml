@@ -5,28 +5,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="5dp"
-    tools:context=".Fragment.ProfileFragment">
+    tools:context=".fragment.ProfileFragment">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:padding="10dp"
         android:text="Information"
+        android:textColor="#D60F00"
         android:textSize="24sp"
-        android:padding="10dp"/>
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/whitebutton"
         android:elevation="2dp"
         android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_marginBottom="5dp">
+        android:padding="5dp">
 
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Your Name" />
+            android:text="Your Name"
+            android:textColor="#D60F00" />
 
         <EditText
             android:id="@+id/info_name"
@@ -37,16 +41,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/whitebutton"
         android:elevation="2dp"
         android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_marginBottom="5dp">
+        android:padding="5dp">
 
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Địa chỉ" />
+            android:text="Địa chỉ"
+            android:textColor="#D60F00" />
 
         <EditText
             android:id="@+id/info_address"
@@ -57,16 +62,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/whitebutton"
         android:elevation="2dp"
         android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_marginBottom="5dp">
+        android:padding="5dp">
 
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Email" />
+            android:text="Email"
+            android:textColor="#D60F00" />
 
         <EditText
             android:id="@+id/info_email"
@@ -77,16 +83,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/whitebutton"
         android:elevation="2dp"
         android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_marginBottom="5dp">
+        android:padding="5dp">
 
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Số điện thoại" />
+            android:text="Số điện thoại"
+            android:textColor="#D60F00" />
 
         <EditText
             android:id="@+id/info_phone"
@@ -94,24 +101,35 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_edit_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit Profile"
-        android:backgroundTint="#009688"
-        android:layout_gravity="center"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btn_edit_profile"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#009688"
+        android:text="Edit Profile" />
 
     <Button
         android:id="@+id/btn_info_savett"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Lưu thông tin"
+        android:layout_gravity="center"
         android:backgroundTint="#337536"
-        android:layout_gravity="center"/>
+        android:text="Lưu thông tin" />
+
+    <Button
+        android:id="@+id/btn_logout_acc"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#D61B1B"
+        android:gravity="center"
+        android:text="Đăng suất" />
 
 </LinearLayout>

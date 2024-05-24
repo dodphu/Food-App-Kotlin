@@ -4,19 +4,19 @@
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/baseline_home_24"
-        android:title="Home" />
+        android:title="Trang chủ" />
     <item
         android:id="@+id/cartFragment"
         android:icon="@drawable/baseline_add_shopping_cart_24"
-        android:title="Cart" />
+        android:title="Giỏ hàng" />
     <item
         android:id="@+id/searchFragment"
         android:icon="@drawable/baseline_manage_search_24"
-        android:title="Search" />
+        android:title="Tìm kiếm" />
     <item
         android:id="@+id/historyFragment"
         android:icon="@drawable/baseline_history_24"
-        android:title="History" />
+        android:title="Lich sử" />
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/baseline_manage_accounts_24"

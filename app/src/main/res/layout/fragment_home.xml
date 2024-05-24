@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Fragment.HomeFragment">
+    tools:context=".fragment.HomeFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewslideshow"
@@ -19,6 +19,7 @@
             android:id="@+id/image_slider"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="10dp"
             app:iss_auto_cycle="true"
             app:iss_delay="5000"
             app:iss_no_dots="true"
@@ -35,9 +36,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:padding="10dp"
             android:text="Danh sách món ăn"
+            android:textColor="#D60F00"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_viewmenu"
@@ -46,8 +49,10 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="@drawable/whitebutton"
-            android:text="View Menu"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:textColor="#37B0E6"
+
+            android:text="View Menu" />
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView

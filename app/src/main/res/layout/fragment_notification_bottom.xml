@@ -5,13 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".NotificationBottomFragment">
+    tools:context=".bottomSheet.NotificationBottomFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:padding="10dp"
         android:text="TRẠNG THÁI DƠN HÀNG"
+        android:textColor="#D60F00"
         android:textSize="20sp"
         android:textStyle="bold" />
 

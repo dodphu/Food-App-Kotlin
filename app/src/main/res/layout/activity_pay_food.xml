@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PayFoodActivity">
+    tools:context=".activity.PayFoodActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -14,7 +14,9 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="Thông tin đơn hàng"
-        android:textSize="20sp" />
+        android:textColor="#D60F00"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,6 +28,7 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="Tên"
+            android:textColor="#D60F00"
             android:textSize="18sp" />
 
         <EditText
@@ -44,6 +47,7 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="Địa chỉ"
+            android:textColor="#D60F00"
             android:textSize="18sp" />
 
         <EditText
@@ -62,6 +66,7 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="Số điện thoại"
+            android:textColor="#D60F00"
             android:textSize="18sp" />
 
         <EditText
@@ -81,6 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Phương thức thanh toán"
+            android:textColor="#D60F00"
             android:textSize="18sp" />
 
         <ImageButton
@@ -100,6 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tổng tiền phải trả"
+            android:textColor="#D60F00"
             android:textSize="18sp" />
 
         <TextView
@@ -109,7 +116,8 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:text="100.000d"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <TextView
@@ -119,12 +127,12 @@
 
     <Button
         android:id="@+id/btn_dathangngay_payfood"
-        android:layout_gravity="center"
         android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:backgroundTint="#04AC0B"
         android:gravity="center"
-        android:layout_height="wrap_content"
-        android:text="Đặt hàng ngay"
-        android:padding="15dp"/>
+        android:padding="15dp"
+        android:text="Đặt hàng ngay" />
 
 </LinearLayout>

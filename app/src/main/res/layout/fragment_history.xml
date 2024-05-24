@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Fragment.HistoryFragment">
+    tools:context=".fragment.HistoryFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recent buy"
+        android:text="Đơn hàng vừa mua"
+        android:textColor="#D60F00"
+        android:textStyle="bold"
+        android:padding="10dp"
         android:textSize="20sp" />
 
     <androidx.cardview.widget.CardView
@@ -46,6 +49,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Tên món ăn"
+                    android:textColor="#07600A"
                     android:textSize="18sp" />
 
                 <TextView
@@ -58,14 +62,14 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/color_receive_history"
                     android:layout_gravity="center"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     app:cardCornerRadius="100dp"
                     android:backgroundTint="@color/black"/>
 
@@ -76,6 +80,7 @@
                     android:layout_gravity="center"
                     android:backgroundTint="#139518"
                     android:text="Received"
+                    android:gravity="center"
                     android:textSize="10sp" />
             </LinearLayout>
         </LinearLayout>
@@ -84,7 +89,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recent buy"
+        android:text="Lịch sử đơn hàng"
+        android:textColor="#D60F00"
+        android:textStyle="bold"
+        android:padding="10dp"
         android:textSize="20sp" />
 
     <androidx.recyclerview.widget.RecyclerView

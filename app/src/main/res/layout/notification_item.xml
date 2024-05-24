@@ -36,6 +36,7 @@
                android:layout_height="wrap_content"
                android:layout_gravity="center"
                android:padding="10dp"
+               android:textColor="#4C5304"
                android:id="@+id/txt_noti"
                android:text="Trạng thái đơn hàng"/>
        </LinearLayout>

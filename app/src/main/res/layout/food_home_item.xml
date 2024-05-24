@@ -27,6 +27,7 @@
             android:layout_weight="1"
             android:padding="20dp"
             android:text="Tên món ăn"
+            android:textColor="#045E08"
             android:textSize="18sp" />
 
         <LinearLayout

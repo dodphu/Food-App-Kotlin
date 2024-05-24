@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Fragment.SearchFragment"
+    tools:context=".fragment.SearchFragment"
     android:padding="10dp">
 
     <TextView
@@ -12,9 +12,11 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Search"
+        android:textColor="#D60F00"
+
         android:textSize="24sp"
         android:textStyle="bold"
-        android:padding="5dp"/>
+        android:padding="10dp"/>
 
     <SearchView
         android:id="@+id/searchview_searchfrag"

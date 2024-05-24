@@ -5,12 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecentOrderItemActivity"
+    tools:context=".activity.RecentOrderItemActivity"
     android:orientation="vertical">
     <TextView
+        android:textColor="#D60F00"
+        android:textStyle="bold"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recent Item Buy"
+        android:text="Đơn hàng vừa mua"
         android:gravity="center"
         android:textSize="24sp"/>
     <androidx.recyclerview.widget.RecyclerView
